@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Ivan Rodin</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js grid component example</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Delete ".min" for console warnings in development -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    </head>
+  <body>
+
+    <!-- component template -->
+    <script type="text/x-template" id="grid-template">
+      <table v-if="filteredData.length">
+        <thead>
+          <tr>
+            <th v-for="key in columns"
+              :class="{ active: sortKey == key }">
+              {{ key | capitalize }}
+
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="entry in filteredData">
+            <td v-for="key in columns">
+              {{entry[key]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p v-else>Нет совпадений</p>
+    </script>
+
+    <!-- demo root element -->
+    <div id="demo">
+      <form id="search">
+        Поиск <input name="query" v-model="searchQuery">
+      </form>
+      <br>
+      <demo-grid
+        :data="gridData"
+        :columns="gridColumns"
+        :filter-key="searchQuery">
+      </demo-grid>
+    </div>
+
+
+    <script src="grid-FINAL-111.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
