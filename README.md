@@ -28,25 +28,25 @@ The `test_table_2_230819` application follows a classic client-side, single-page
 
 ```mermaid
 graph TD
-    A[👤 User] --> B{🌐 Web Browser};
-    B --> C[📄 index.html];
+    A["👤 User"] --> B{"🌐 Web Browser"};
+    B --> C["📄 index.html"];
 
-    C -- Links --> D[🎨 style.css];
-    C -- Loads --> E[🧩 Vue.js Library (CDN)];
-    C -- Loads --> F[📜 grid-FINAL-111.js];
-    C -- Loads (Auxiliary) --> G[💡 script.js];
+    C -- Links --> D["🎨 style.css"];
+    C -- Loads --> E["🧩 Vue.js Library (CDN)"];
+    C -- Loads --> F["📜 grid-FINAL-111.js"];
+    C -- Loads (Auxiliary) --> G["💡 script.js"];
 
     subgraph Vue.js Application Lifecycle
-        F -- Initializes & Mounts --> H[📦 Vue Root Instance (#demo)];
-        H -- Registers & Uses --> I[📊 demo-grid Component];
-        H -- Manages Reactive State --> J[🔍 searchQuery, 🗃️ gridData, 🏷️ gridColumns];
+        F -- Initializes & Mounts --> H["📦 Vue Root Instance (#demo)"];
+        H -- Registers & Uses --> I["📊 demo-grid Component"];
+        H -- Manages Reactive State --> J["🔍 searchQuery, 🗃️ gridData, 🏷️ gridColumns"];
 
         J -- Passes Data as Props --> I;
-        I -- Computes Derived State --> K[🔄 filteredData (Based on searchQuery)];
-        K -- Renders Dynamically --> L[HTML Table (Table Head & Body)];
+        I -- Computes Derived State --> K["🔄 filteredData (Based on searchQuery)"];
+        K -- Renders Dynamically --> L["HTML Table (Table Head & Body)"];
     end
 
-    A -- User Interaction (Search Input) --> K_input[Text Input (v-model)];
+    A -- User Interaction (Search Input) --> K_input["Text Input (v-model)"];
     K_input --> J;
 
     L -- Displayed In --> B;
